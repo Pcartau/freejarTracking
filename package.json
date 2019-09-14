@@ -1,0 +1,19 @@
+{
+  "name": "freejartracking",
+  "version": "1.0.0",
+  "description": "Free open source tracking tool",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pcartau/freejarTracking.git"
+  },
+  "author": "pcartau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pcartau/freejarTracking/issues"
+  },
+  "homepage": "https://github.com/Pcartau/freejarTracking#readme"
+}
