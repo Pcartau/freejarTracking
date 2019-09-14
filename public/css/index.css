@@ -1,0 +1,14 @@
+body {
+  background: black;
+  color: white;
+  font: 16px/30px 'Nunito Sans', Arial, sans-serif;
+}
+.title {
+  text-align: center;
+}
+.subtitle {
+  text-align: center;
+}
+.description {
+  text-align: center;
+}
