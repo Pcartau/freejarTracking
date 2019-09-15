@@ -1,10 +1,11 @@
 const passport = require('passport');
 const GithubStrategy = require('passport-github').Strategy;
 const User = require('./dbQueries/userQueries.js');
+const keys = require('./keys.js');
 
 passport.use(new GithubStrategy({
   clientID: 'a56a7ffd8f18ca19c8df',
-  clientSecret: '5ca72e9777e450f6af1c5cdeb853d8e2350f3859',
+  clientSecret: process.env.GIT_SECRET || keys.githubSecret,
   callbackURL: 'http://localhost:8080/auth/github/callback',
 }, (accessToken, refreshToken, profile, done) => {
   User.findOrCreate(profile.id, profile.displayName)
