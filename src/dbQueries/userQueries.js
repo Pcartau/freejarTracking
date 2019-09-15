@@ -11,4 +11,11 @@ async function findOrCreate(userId) {
     .catch((e) => { throw new Error(e); });
 }
 
-module.exports = findOrCreate;
+async function findById(userId) {
+  return User.findOne({ userId });
+}
+
+module.exports = {
+  findOrCreate,
+  findById,
+};
