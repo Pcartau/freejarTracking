@@ -13,7 +13,7 @@ const app = express();
 require('./src/passport.js');
 
 app.use(session({
-  secret: 'C!4D##17$36@',
+  secret: process.env.SESSION_SECRET || keys.secretSession,
   name: 'sessionId',
   resave: false,
   saveUninitialized: false,
