@@ -15,6 +15,7 @@ const uri = `mongodb+srv://admin:${password}@cluster0-s0dow.mongodb.net/test?ret
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
 });
 
 
