@@ -23,7 +23,7 @@ mongoose.connect(uri, {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-
+app.disable('x-powered-by');
 
 /* ---------------------------ROUTES--------------------------------*/
 require(`${process.env.PWD}/routes/routes.js`)(app);
