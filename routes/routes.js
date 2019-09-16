@@ -8,6 +8,16 @@ module.exports = (app) => {
   });
 
   app.get('/dashboard', (req, res) => {
-    res.sendFile(`${process.env.PWD}/views/dashboard.html`);
+    if (req.user) {
+      res.sendFile(`${process.env.PWD}/views/dashboard.html`);
+    } else {
+      res.sendFile(`${process.env.PWD}/views/index.html`);
+    }
+  });
+
+  app.get('/getUsername', (req, res) => {
+    if (req.user) {
+      res.json(req.user.userName.split(' ')[0]);
+    }
   });
 };
