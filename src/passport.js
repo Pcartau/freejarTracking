@@ -8,7 +8,7 @@ passport.use(new GithubStrategy({
   clientSecret: process.env.GIT_SECRET || keys.githubSecret,
   callbackURL: 'http://localhost:8080/auth/github/callback',
 }, (accessToken, refreshToken, profile, done) => {
-  User.findOrCreate(profile.id, profile.displayName)
+  User.findOrCreate(profile.id, profile.displayName || profile.username)
     .then((user) => {
       done(null, user);
     })
